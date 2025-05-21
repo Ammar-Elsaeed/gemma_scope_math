@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data directories
+activations/
+latents/
+activ_freq/
+
+# Metrics
+correctness_selective_metrics/
+range_agnostic_metrics/
+range_selective_metrics/
+
+# Figures
+figures/
+
+# Reading materials
+reading/
+
+# Environment
+.env
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.log
+.DS_Store
