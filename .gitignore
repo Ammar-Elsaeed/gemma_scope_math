@@ -24,7 +24,7 @@ reading/
 .venv
 env/
 venv/
-
+.arena/
 # IDE
 .vscode/
 .idea/
