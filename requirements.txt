@@ -1,0 +1,37 @@
+# Generated requirements for gemma_scope_math project
+# Generated automatically - you may need to adjust versions
+
+# Core ML/AI packages
+torch==2.8.0+cu128
+transformers==4.52.3
+sae-lens==5.5.2
+transformer-lens==2.15.0
+
+# HuggingFace ecosystem
+huggingface-hub==0.32.2
+datasets==2.21.0
+tokenizers==0.21.0
+safetensors==0.4.5
+accelerate==1.7.0
+bitsandbytes==0.45.5
+
+# Scientific computing
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.1.4
+einops==0.8.1
+
+# Visualization and analysis
+matplotlib==3.8.4
+
+# Development tools
+jupyter==1.0.0
+ipython==8.20.0
+pytest==7.4.0
+tqdm==4.66.4
+
+# Additional ML utilities
+tiktoken==0.9.0
+wandb==0.19.8
+triton
+tabulate

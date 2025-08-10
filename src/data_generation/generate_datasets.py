@@ -87,11 +87,11 @@ def main():
     np.random.seed(42)
     
     # # Generate simple datasets (0-99)
-    # generate_arithmetic_dataset('+', 'addition.txt')
-    # generate_arithmetic_dataset('-', 'subtraction.txt')
+    generate_arithmetic_dataset('+', 'addition.txt')
+    generate_arithmetic_dataset('-', 'subtraction.txt')
     
-    # # Generate paired random datasets (1000-10000)
-    # generate_paired_random_datasets(10000)
+    # Generate paired random datasets (1000-10000)
+    generate_paired_random_datasets(10000)
     # Generate both ranges in one file
     generate_both_Ranges(10000, "addition_full_range.txt", operation='+')
     generate_both_Ranges(10000, "subtraction_full_range.txt", operation='-')

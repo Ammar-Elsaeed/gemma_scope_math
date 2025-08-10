@@ -1,0 +1,11 @@
+Bootstrap: localimage
+From: torch-gpu.sif
+
+%post
+    # Install triton
+    pip install triton
+
+%environment
+    # Set environment variables for Triton and TorchDynamo
+    export TORCHDYNAMO_DISABLE="0"
+    export USE_TRITON="1"
