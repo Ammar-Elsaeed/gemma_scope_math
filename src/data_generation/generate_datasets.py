@@ -19,7 +19,7 @@ def generate_arithmetic_dataset(operation, output_file):
     # Write to file
     with open(os.path.join("data", output_file), 'w') as f:
         for a, b in combinations:
-            line = f"{a}{operation}{b}=\n"
+            line = f"Answer directly: {a}{operation}{b}= \n"
             f.write(line)
     
     # Count lines in generated file
@@ -43,13 +43,13 @@ def generate_paired_random_datasets(num_examples=10000):
     # Generate addition dataset
     with open(os.path.join("data", "random_addition.txt"), 'w') as f:
         for a, b in operands:
-            line = f"{a}+{b}=\n"
+            line = f"Answer directly: {a}+{b}= \n"
             f.write(line)
     
     # Generate subtraction dataset with same operands
     with open(os.path.join("data", "random_subtraction.txt"), 'w') as f:
         for a, b in operands:
-            line = f"{a}-{b}=\n"
+            line = f"Answer directly: {a}-{b}= \n"
             f.write(line)
     
     print(f"Generated random_addition.txt and random_subtraction.txt with {num_examples} examples each")
@@ -73,10 +73,10 @@ def generate_both_Ranges(num_examples=10000, output_file="both_ranges.txt", oper
     with open(os.path.join("data", output_file), 'w') as f:
         # Write 0-99 range (addition)
         for a, b in selected_simple:
-            f.write(f"{a}{operation}{b}=\n")
+            f.write(f"Answer directly: {a}{operation}{b}= \n")
         # Write 1000-10000 range (addition)
         for a, b in random_pairs:
-            f.write(f"{a}{operation}{b}=\n")
+            f.write(f"Answer directly: {a}{operation}{b}= \n")
 
     print(f"Generated {output_file} with {num_examples} examples: {half} from 0-99 and {half} from 1000-10000")
 

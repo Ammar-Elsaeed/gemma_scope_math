@@ -11,7 +11,7 @@ class SAEModule:
     def __init__(
         self,
         sae_release: str = "gemma-scope-2b-pt-res-canonical",
-        device: str = None,
+        device = None,
         output_dir: str = "./latents",
         dataset: str = "default"
     ):
@@ -210,8 +210,8 @@ def load_latents(path, return_sparse=False):
 if __name__ == "__main__":
     import timeit
     start_time = timeit.default_timer()
-    # datasets = ["addition", "subtraction", "random_addition", "random_subtraction", "correct_arithmetic", "incorrect_arithmetic"]
-    datasets = [ "subtraction_full_range"]  # "addition_full_range",
+    datasets = ["addition", "subtraction", "random_addition", "random_subtraction", ] # "correct_arithmetic", "incorrect_arithmetic"
+    # datasets = [ "subtraction_full_range"]  # "addition_full_range",
     # Define the path to load activations from and dataset name
     for dataset in datasets:
         activations_path = f"activations/{dataset}/layer_*"  # Adjust path as needed
@@ -221,7 +221,7 @@ if __name__ == "__main__":
         
         # Process activations batch by batch
         latents = {}
-        for layer_name, batch_activations in load_activations(activations_path, batch_size=1000):
+        for layer_name, batch_activations in load_activations(activations_path, batch_size=2048):
             # Extract layer number from layer name
             layer_num = int(layer_name.split('_')[1])
             

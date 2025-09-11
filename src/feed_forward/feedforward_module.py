@@ -10,7 +10,7 @@ class FeedForwardModule:
         self,
         model_name: str = "google/gemma-2-2b-it",
         batch_size: int = 800,
-        device: str = None,
+        device = None,
         output_dir: str = "./activations"
     ):
         """Initialize the feedforward module with model and processing parameters."""
@@ -29,18 +29,18 @@ class FeedForwardModule:
 
     def _initialize_model(self):
         """Load the quantized model with 4-bit precision."""
-        quantization_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_compute_dtype=torch.float16,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_use_double_quant=True,
-        )
+        # quantization_config = BitsAndBytesConfig(
+        #     load_in_4bit=True,
+        #     bnb_4bit_compute_dtype=torch.float16,
+        #     bnb_4bit_quant_type="nf4",
+        #     bnb_4bit_use_double_quant=True,
+        # )
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_name,
-            quantization_config=quantization_config,
-            device_map="auto",
-            torch_dtype=torch.float16,
-            low_cpu_mem_usage=True,
+            # quantization_config=quantization_config,
+            device_map="cuda",
+            torch_dtype=torch.float32,
+            # low_cpu_mem_usage=True,
         )
         self.model.eval()
 
@@ -194,13 +194,12 @@ class FeedForwardModule:
 
 if __name__ == "__main__":
     import timeit
-    datasets = ["addition_full_range", "subtraction_full_range"]  # Adjust as needed for your use case
+    # datasets = ["addition_full_range", "subtraction_full_range"]  # Adjust as needed for your use case
     start_time = timeit.default_timer()
-    # dataset = "random_addition" # "addition" or "subtraction" or random_addition or random_subtraction or correct_arithmetic or incorrect_arithmetic
-
+    datasets = ["random_addition", "random_subtraction", "addition", "subtraction"]  
     for dataset in datasets:
         # Example usage with batch control
-        module = FeedForwardModule(batch_size=500, output_dir=f"./activations/{dataset}")
+        module = FeedForwardModule(batch_size=512, output_dir=f"./activations/{dataset}")
     
         # Process specific batch range (e.g., batches 5-10)
         activations = module.process_dataset(

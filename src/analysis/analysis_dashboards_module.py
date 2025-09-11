@@ -91,14 +91,14 @@ class AnalysisModule:
 if __name__ == "__main__":
     # List of all datasets to process
     datasets = [
-        # "addition", 
-        # "subtraction", 
-        # "random_addition", 
-        # "random_subtraction", 
-        # "correct_arithmetic", 
-        # "incorrect_arithmetic"
-        "addition_full_range",
-        "subtraction_full_range",
+        "addition", 
+        "subtraction", 
+        "random_addition", 
+        "random_subtraction", 
+        # # "correct_arithmetic", 
+        # # "incorrect_arithmetic"
+        # "addition_full_range",
+        # "subtraction_full_range",
     ]
     
     # Process each dataset
