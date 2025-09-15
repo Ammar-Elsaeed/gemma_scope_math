@@ -32,3 +32,14 @@ venv/
 # Misc
 *.log
 .DS_Store
+
+ablation_results/
+aggregated_results/
+feature_metrics/
+logs/
+src/ablation/USAGE_EXAMPLE.py
+src/ablation/ablation_analysis_utils.py
+src/notebooks/.ipynb_checkpoints/
+src/utils.py
+todo.md
+torch-gpu.sif
