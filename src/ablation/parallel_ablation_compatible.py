@@ -233,7 +233,8 @@ def process_batch_compatible(model, sae, tokenizer, batch_prompts, feats_indices
     # write_log(f"Input tokens: {tokens}")
     # write_log(f"tokens keys: {tokens.keys()}")
     if start is None or end is None:
-        start, end = tokens["input_ids"].shape[1] - 1, tokens["input_ids"].shape[1]
+        # start, end = tokens["input_ids"].shape[1] - 1, tokens["input_ids"].shape[1] # Ablate only the last token, in the first generation step
+        start, end = -1, None  # THIS LINE IS THE FIX: Ablate only the last token, in every generation step
 
     # Dictionary to store results in compatible format
     batch_results = {}

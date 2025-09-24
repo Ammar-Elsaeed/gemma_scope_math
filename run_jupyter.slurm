@@ -4,6 +4,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks-per-node=1
 #SBATCH --output=logs/jupyter-gpu-%j.out
+#constraint="80gb"
 
 cd /home/ammar/gemma_scope_math
 

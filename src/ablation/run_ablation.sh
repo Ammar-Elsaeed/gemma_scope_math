@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=addition
 #SBATCH --partition=gpu-2h
-#SBATCH --array=0,5,10,15,25
+#SBATCH --array=20
 #SBATCH --gpus-per-task=1   # Give each array job 1 GPU
 #SBATCH --ntasks=1          # Each job runs a single task
 #SBATCH --ntasks-per-node=1
